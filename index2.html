@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    },
+                },
+                flex: {
+                    '2': '2 2 0%'
+                },
+                margin: (theme, { negative }) => ({
+                    auto: "auto",
+                    ...theme("spacing"),
+                    ...negative(theme("spacing")),
+                }),
+                spacing: {
+                    px: "1px",
+                    0: "0",
+                    1: "0.25rem",
+                    2: "0.5rem",
+                    3: "0.75rem",
+                    4: "1rem",
+                    5: "1.25rem",
+                    6: "1.5rem",
+                    8: "2rem",
+                    10: "2.5rem",
+                    12: "3rem",
+                    13: "3.25rem",
+                    14: "3.5rem",
+                    15: "3.75rem",
+                    16: "4rem",
+                    20: "5rem",
+                    24: "6rem",
+                    32: "8rem",
+                    40: "10rem",
+                    48: "12rem",
+                    56: "14rem",
+                    64: "16rem",
+                },
+            }
+        }
+    </script>
+</head>
+
+<body class="h-screen">
+
+    <div id="content" class="flex flex-1 flex-col h-full">
+        <div class="flex">
+            <div class="flex-1  bg-white h-[500px] border border-r-0 border-black flex flex-col p-4">
+                <div class="flex justify-center items-center text-xl mb-6">
+                    <h2 class="text-xl">
+                        Assets
+                    </h2>
+                </div>
+
+                <div class="flex flex-col justify-between flex-1">
+                    <div class="flex flex-row justify-center items-center space-x-3">
+                        <div class="h-[150px] w-[175px] flex flex-col">
+                            <div class="text-xl border border-black flex-1">
+                            </div>
+                            <span>vid-01020304.mpg</span>
+                        </div>
+                        <div class="h-[150px] w-[175px] flex flex-col">
+                            <div class="text-xl border border-black flex-1">
+                            </div>
+                            <span>aud-01020304.mp3</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row space-x-2 justify-center">
+                        <div class="flex flex-1 justify-end">
+                            <button>
+                                <i class="fas fa-plus-square"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-1 justify-end">
+                            <button>
+                                <svg enable-background="new 0 0 32 32" height="16px" width="16px" id="Layer_1"
+                                    version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g id="grid-2">
+                                        <path
+                                            d="M10.246,4.228c0-0.547-0.443-0.991-0.99-0.991H3.914c-0.548,0-0.991,0.443-0.991,0.991V9.57   c0,0.546,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.444,0.99-0.99V4.228z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M19.453,4.228c0-0.547-0.443-0.991-0.991-0.991h-5.343c-0.546,0-0.99,0.443-0.99,0.991V9.57   c0,0.546,0.444,0.99,0.99,0.99h5.343c0.548,0,0.991-0.444,0.991-0.99V4.228z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M28.868,4.228c0-0.547-0.443-0.991-0.99-0.991h-5.342c-0.548,0-0.991,0.443-0.991,0.991V9.57   c0,0.546,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.444,0.99-0.99V4.228z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M10.246,13.224c0-0.547-0.443-0.99-0.99-0.99H3.914c-0.548,0-0.991,0.443-0.991,0.99v5.342   c0,0.549,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.441,0.99-0.99V13.224z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M19.453,13.224c0-0.547-0.443-0.99-0.991-0.99h-5.343c-0.546,0-0.99,0.443-0.99,0.99v5.342   c0,0.549,0.444,0.99,0.99,0.99h5.343c0.548,0,0.991-0.441,0.991-0.99V13.224z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M28.868,13.224c0-0.547-0.443-0.99-0.99-0.99h-5.342c-0.548,0-0.991,0.443-0.991,0.99v5.342   c0,0.549,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.441,0.99-0.99V13.224z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M10.246,22.43c0-0.545-0.443-0.99-0.99-0.99H3.914c-0.548,0-0.991,0.445-0.991,0.99v5.344   c0,0.547,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.443,0.99-0.99V22.43z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M19.453,22.43c0-0.545-0.443-0.99-0.991-0.99h-5.343c-0.546,0-0.99,0.445-0.99,0.99v5.344   c0,0.547,0.444,0.99,0.99,0.99h5.343c0.548,0,0.991-0.443,0.991-0.99V22.43z"
+                                            fill="#515151" />
+                                        <path
+                                            d="M28.868,22.43c0-0.545-0.443-0.99-0.99-0.99h-5.342c-0.548,0-0.991,0.445-0.991,0.99v5.344   c0,0.547,0.443,0.99,0.991,0.99h5.342c0.547,0,0.99-0.443,0.99-0.99V22.43z"
+                                            fill="#515151" />
+                                    </g>
+                                </svg>
+                            </button>
+                            <button class="ml-2">
+                                <i class="fa-solid fa-list"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-2 bg-white h-[500px] border border-r-0 border-black p-4 flex flex-col">
+                <div class="flex items-center justify-center  mb-4">
+                    <button class="ml-2">
+                        <i class="fa-solid fa-arrow-pointer mx-1"></i>
+                    </button>
+                    <button class="ml-2">
+                        <i class="fa-regular fa-hand mx-1"></i>
+                    </button>
+                    <button class="ml-2">
+                        <i class="fa-solid fa-crop mx-1"></i>
+                    </button>
+                    <select
+                        class="text-left py-2 px-3 h-fit text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2"
+                        name="" id="" default-value="50%" value="50%">
+                        <option value="">100%</option>
+                    </select>
+                </div>
+                <div class="flex border border-black justify-center items-center flex-1">
+                </div>
+            </div>
+
+            <div class="flex-1 h-[500px] border border-black py-4">
+                <div class="flex px-4 mb-4 justify-end">
+                    <button>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </button>
+                    <button
+                        class="ml-2 text-left py-2 px-3 h-fit text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Export</button>
+                </div>
+                <div class="border-black border-t">
+                    <h1 class=" flex justify-center items-center text-xl font-medium mt-4 mb-6">Properties</h1>
+                    <div class="flex justify-end flex-col items-end">
+
+                        <div class="px-4 w-[75%] flex item-center justify-end">
+                            <span>Scale</span>
+                            <input id="default-range" type="range" value="20"
+                                class="bg-black cursor-pointer flex-1 ml-1 max-w-[140px] w-[140px]">
+                            <input type="type" value="20%"
+                                class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                        </div>
+
+                        <div class="px-4 w-[75%] flex item-center mt-4 justify-end">
+                            <span>Opacity</span>
+                            <input id="default-range" type="range" value="20"
+                                class="bg-black cursor-pointer flex-1 ml-1 max-w-[140px] w-[140px]">
+                            <input type="type" value="20%"
+                                class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                        </div>
+
+                        <div class="px-4 w-[75%] flex item-center mt-4 flex-row justify-end">
+                            <div>
+                                <p>Rotate</p>
+                            </div>
+                            <div>
+                                <div class="text-end">
+                                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                                    <span class="text-xl">x</span>
+                                    <input type="type" value="20%"
+                                        class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                </div>
+                                <div class="text-end mt-2">
+                                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                                    <span class="text-xl">y</span>
+                                    <input type="type" value="20%"
+                                        class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                </div>
+                                <div class="text-end mt-2">
+                                    <i class="fa-solid fa-arrow-rotate-right"></i>
+                                    <span class="text-xl">z</span>
+                                    <input type="type" value="20%"
+                                        class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class=" border-t border-black pt-3 w-full mt-4 justify-end flex">
+                            <div class="px-4 w-[75%] flex item-center flex-row justify-end flex">
+                                <div>
+                                    <p>Position</p>
+                                </div>
+                                <div>
+                                    <div class="text-end">
+                                        <span class="text-xl">x</span>
+                                        <input type="type" value="20%"
+                                            class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                    </div>
+                                    <div class="text-end mt-2">
+                                        <span class="text-xl">y</span>
+                                        <input type="type" value="20%"
+                                            class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                    </div>
+                                    <div class="text-end mt-2">
+                                        <span class="text-xl">z</span>
+                                        <input type="type" value="20%"
+                                            class="w-[15%] ml-1 p-1 text-left text-sm font-medium text-gray-900 focus:outline-none bg-white border border-gray-600 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 ml-2">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="player-secton" class="p-6 flex justify-center border-b border-black">
+            <div class="flex justify-center items-center">
+                <button class="border border-black rounded-full w-[2rem] h-[2rem] "><i
+                        class="text-[1rem] fa-solid fa-backward"></i></button>
+                <button class="border border-black rounded-full w-[2.5rem]  h-[2.5rem] ml-2 "><i
+                        class="text-[1.5rem] fa-solid fa-play"></i></button>
+                <button class="border border-black rounded-full w-[2rem] h-[2rem] ml-4"><i
+                        class="text-[1rem] fa-solid fa-forward"></i></button>
+            </div>
+            <div class="w-[400px] ml-8 flex items-center">
+                <div class="overflow-hidden bg-blue-100 h-3 rounded-full w-full">
+                    <span class="h-full bg-blue-500 w-full block rounded-full" style="width: 60%"></span>
+                </div>
+                <div class="ml-4">
+                    12:00/7:20
+                </div>
+            </div>
+
+        </div>
+        <div id="editing-secton" class="py-2 px-6 flex justify-start border-b border-black">
+            <button class="">
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button class="ml-2">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </button>
+            <button class="ml-2">
+                <i class="fa-solid fa-scissors"></i>
+            </button>
+            <button class="ml-2">
+                <i class="fa-regular fa-clone"></i>
+            </button>
+            <button class="ml-2">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+            <button class="ml-2">
+                <i class="fa-solid fa-table-columns"></i>
+            </button>
+            <div class="flex w-[150px] ml-2 items-center">
+                <button class="mr-2">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                </button>
+                <div class="overflow-hidden bg-blue-100 h-1.5 rounded-full w-full">
+                    <span class="h-full bg-blue-500 w-full block rounded-full" style="width: 60%"></span>
+                </div>
+                <button class="ml-2">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="time-line-section" class="flex flex-col flex-1">
+            <div class="h-10 flex border-b border-black">
+                <div class="w-[150px] h-full border-r border-black"></div>
+                <div id="time-line-indicator" class="max-w-[calc(100%-150px)] w-[calc(100%-150px)] flex">
+                </div>
+            </div>
+
+            <div class="flex border-b border-black">
+                <div class="w-[150px] border-r border-black py-1 pl-4 pr-1">
+                    <div class="text-end"><i class="text-sm fa-regular fa-eye"></i></div>
+                    <div>track 2</div>
+                    <div class="text-end"><i class="text-sm fa-solid fa-unlock"></i></div>
+                </div>
+                <div>
+                </div>
+            </div>
+
+            <div class="flex border-b border-black">
+                <div class="w-[150px] border-r border-black py-1 pl-4 pr-1">
+                    <div class="text-end"><i class="text-sm fa-regular fa-eye"></i></div>
+                    <div>track 1</div>
+                    <div class="text-end"><i class="text-sm fa-solid fa-unlock"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const parent = document.getElementById('time-line-indicator');
+
+            function addSpans() {
+                const parentWidth = parent.offsetWidth;
+                let maxWidth = Math.floor(parentWidth / 9);
+                console.log('[first]', maxWidth, parentWidth)
+                let index = -2
+                while (maxWidth > 0) {
+                    if (index > 4) {
+                        index = 0
+                    }
+                    index += 1
+                    const span = document.createElement('span');
+                    span.style.marginLeft = 0.5 + 'rem';
+                    span.style.height = index === 3 ? '1.5rem' : '1rem'
+                    span.style.borderRight = '1px solid black'
+                    parent.appendChild(span);
+                    maxWidth -= 1;
+                }
+            }
+
+            addSpans();
+        });
+    </script>
+</body>
+
+</html>
