@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POC WCS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-200">
+    <div id="sideNav" class="lg:block hidden bg-white w-64 h-screen fixed rounded-none border-none">
+        <div class="p-4 space-y-4">
+            <a href="#" class="px-4 py-3 flex items-center space-x-4 rounded-md text-black-500 group">
+                <span>Logo</span>
+            </a>
+            <a href="#"
+                class="px-4 py-3 flex items-center space-x-4 rounded-md text-white bg-blue-700 group hover:bg-blue-800 ">
+                <span>New Videos +</span>
+            </a>
+            <a href="#"
+                class="px-4 py-3 flex items-center space-x-4 rounded-md text-black-500 group hover:bg-gray-200 ">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="#"
+                class="px-4 py-3 flex items-center space-x-4 rounded-md text-black-500 group hover:bg-gray-200 ">
+                <i class="fa-solid fa-folder"></i>
+                <span>Templates</span>
+            </a>
+            <a href="#"
+                class="px-4 py-3 flex items-center space-x-4 rounded-md text-black-500 group hover:bg-gray-200 ">
+                <i class="fa-solid fa-file-video"></i>
+                <span>All Videos</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="lg:ml-64 lg:px-6 lg:flex lg:flex-col lg:w-75% pt-5 ml-2">
+        <div class=" flex space-x-4 justify-between ">
+            <div class="bg-white rounded-full border-none p-2 mb-4 shadow-md w-[200px]">
+                <div class="flex items-center ">
+                    <i class="px-1 fas fa-search "></i>
+                    <input type="text" placeholder="Search..." class="ml-3 focus:outline-none w-full ">
+                </div>
+            </div>
+            <i class="fa-solid fa-user p-2 m-2 "></i>
+        </div>
+        <p class="mt-6 text-xl leading-8 text-gray-700">Let's create some <strong>Videos!</strong></p>
+
+        <div class="flex space-x-2 my-2">
+            <button type="button"
+                class="pr-4 w-[180px] text-left mb-4 py-2 pl-2 h-fit font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <i class="fa-solid fa-scissors rounded-md bg-purple-200 p-2 mr-2" aria-hidden="true"></i>Create
+                Project</button>
+
+            <button type="button"
+                class="pr-4 w-[180px] text-left mb-4 py-2  pl-2 h-fit text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <i class="fa-solid fa-video rounded-md bg-red-200 p-2 mr-2" aria-hidden="true"></i>Record Video</button>
+
+            <button type="button"
+                class="pr-4 w-[180px] text-left mb-4 py-2  pl-2 h-fit text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <i class="fa-solid fa-wifi  rounded-md  bg-blue-200 p-2 mr-2" aria-hidden="true"></i> Live</button>
+
+            <button type="button"
+                class="pr-4 w-[180px] text-left mb-4 py-2  pl-2 h-fit text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-black focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <i class="fa-solid fa-microphone  rounded-md  bg-yellow-200 p-2 mr-2" aria-hidden="true"></i>
+                Record
+                Podcast</button>
+        </div>
+
+        <div class="flex space-x-4 justify-between ">
+            <p class="mt-6 text-base leading-8 text-gray-700">My Recent Videos</p>
+            <a href="/dashboard.html" class="mt-6 text-sm leading-8 text-gray-700">All Videos ></a>
+        </div>
+
+        <div class="flex space-x-4 flex-wrap: wrap;">
+            <div>
+                <a href="">
+                    <img class="rounded-md h-[175px] w-[300px]" src="./nature1.jpg" alt="image1" />
+                    <span>
+                        Project Name 1
+                    </span>
+                </a>
+            </div>
+
+            <a href="#">
+                <img class="rounded-md h-[175px] w-[300px] " src="./nature2.jpg" alt="image2" />
+                <span>
+                    Project Name 2
+                </span>
+            </a>
+
+            <a href="#">
+                <img class="rounded-md h-[175px] w-[300px]" src="./nature3.jpg" alt="image3" />
+                <span>
+                    Project Name 3
+                </span>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
